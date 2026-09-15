@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ecuaservices Travel LLC | Waterbury, CT</title>
+  <meta name="description" content="Ecuaservices Travel LLC ofrece servicios de envíos, transferencias de dinero y viajes en Waterbury, Connecticut.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #102c4e;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e7eef4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 78px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #073d78, #13b8c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: #073d78;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      color: #13aab6;
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #163b5c;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #12aeb9;
+    }
+
+    .nav-button {
+      background: #0b4c88;
+      color: white !important;
+      padding: 11px 19px;
+      border-radius: 30px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(22,190,199,.18), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(7,61,120,.12), transparent 30%),
+        linear-gradient(135deg, #f9fcff 0%, #eefaff 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      bottom: -170px;
+      border-radius: 50%;
+      border: 70px solid rgba(15,174,186,.08);
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      margin: auto;
+      padding: 80px 25px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #e3f9fa;
+      color: #087d88;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      color: #073d78;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #10adb9;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #526b80;
+      font-size: 19px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: #073d78;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #0b4f91;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #087d88;
+      border: 1px solid #b9e7e9;
+    }
+
+    .btn-secondary:hover {
+      background: #ecfbfc;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-heading span {
+      color: #10a9b5;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .section-heading h2 {
+      color: #073d78;
+      font-size: 38px;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: #667c8e;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      border: 1px solid #e4edf2;
+      border-radius: 20px;
+      padding: 35px;
+      background: white;
+      transition: .25s;
+      box-shadow: 0 8px 30px rgba(7,61,120,.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(7,61,120,.10);
+      border-color: #bce8ea;
+    }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      background: #e7fafa;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      color: #073d78;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #657b8d;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #f4fbfc;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 420px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #073d78, #086c96 55%, #14b7c0);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 45px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      top: -100px;
+      right: -80px;
+    }
+
+    .about-visual h3 {
+      font-size: 38px;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .about-copy .small-title {
+      color: #0aa7b2;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .about-copy h2 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin: 10px 0 20px;
+      color: #073d78;
+    }
+
+    .about-copy p {
+      color: #617789;
+      margin-bottom: 18px;
+    }
+
+    /* LOCATION */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .contact-card {
+      padding: 40px;
+      border-radius: 22px;
+      background: #073d78;
+      color: white;
+    }
+
+    .contact-card.light {
+      background: #eefafb;
+      color: #073d78;
+    }
+
+    .contact-card h3 {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .contact-card p {
+      margin: 11px 0;
+    }
+
+    .contact-card a {
+      color: inherit;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 20px;
+    }
+
+    .cta-box {
+      max-width: 1180px;
+      margin: auto;
+      background: linear-gradient(120deg, #073d78, #08618d, #11adb8);
+      border-radius: 30px;
+      padding: 65px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-box h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      opacity: .9;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: #073d78;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 80px;
+      background: #052f5b;
+      color: #c8d8e5;
+      padding: 50px 25px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: white;
+      font-size: 19px;
+    }
+
+    footer p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      max-width: 1180px;
+      margin: 35px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .service-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .about-visual {
+        min-height: 300px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="brand">
+      <div class="brand-icon">E</div>
+      <div class="brand-text">
+        <strong>ECUASERVICES</strong>
+        <span>TRAVEL</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="nav-button">Contáctanos</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <div class="eyebrow">🇪🇨 Ecuador &nbsp; • &nbsp; 🇺🇸 Estados Unidos</div>
+
+      <h1>
+        Más cerca de <span>Ecuador</span>,
+        estés donde estés.
+      </h1>
+
+      <p>
+        En Ecuaservices Travel LLC te ayudamos con tus envíos,
+        transferencias de dinero y servicios de viaje con atención
+        personalizada desde Waterbury, Connecticut.
+      </p>
+
+      <div class="buttons">
+        <a href="#servicios" class="btn btn-primary">Ver nuestros servicios</a>
+        <a href="#contacto" class="btn btn-secondary">Hablar con nosotros</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="services" id="servicios">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Nuestros servicios</span>
+        <h2>Todo lo que necesitas en un solo lugar</h2>
+        <p>
+          Soluciones prácticas para mantenerte conectado con tus seres queridos
+          y facilitar tus gestiones entre Estados Unidos y Ecuador.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">💵</div>
+          <h3>Envíos de Dinero</h3>
+          <p>
+            Realiza tus transferencias de dinero de manera conveniente
+            con atención personalizada en nuestra agencia.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>Envíos de Paquetes</h3>
+          <p>
+            Te ayudamos con el envío de paquetes y encomiendas para que
+            tus artículos lleguen a su destino.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✈️</div>
+          <h3>Servicios de Viaje</h3>
+          <p>
+            Recibe asistencia personalizada para tus necesidades de viaje
+            y encuentra opciones que se adapten a tus planes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+
+      <div class="about-visual">
+        <h3>
+          Conectando familias<br>
+          entre 🇺🇸 y 🇪🇨
+        </h3>
+      </div>
+
+      <div class="about-copy">
+        <span class="small-title">Ecuaservices Travel LLC</span>
+
+        <h2>Un servicio cercano y personalizado</h2>
+
+        <p>
+          En Ecuaservices entendemos la importancia de mantenerte conectado
+          con tu familia y tus raíces.
+        </p>
+
+        <p>
+          Desde nuestra agencia en Waterbury, Connecticut, ofrecemos distintos
+          servicios para ayudarte con tus envíos, transferencias y necesidades
+          de viaje.
+        </p>
+
+        <a href="#contacto" class="btn btn-primary">Visítanos</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="contacto">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Contacto</span>
+        <h2>Estamos para ayudarte</h2>
+        <p>
+          Visítanos o comunícate con nosotros para obtener más información
+          sobre nuestros servicios.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>📍 Nuestra ubicación</h3>
+
+          <p><strong>Ecuaservices Travel LLC</strong></p>
+          <p>43 Meriden Rd</p>
+          <p>Waterbury, CT 06705</p>
+
+          <br>
+
+          <p>
+            <strong>Teléfono</strong><br>
+            <a href="tel:+12037544375">(203) 754-4375</a>
+          </p>
+        </div>
+
+        <div class="contact-card light">
+          <h3>💬 Comunícate con nosotros</h3>
+
+          <p>
+            ¿Tienes preguntas sobre un envío, transferencia o viaje?
+          </p>
+
+          <p>
+            Nuestro equipo está disponible para orientarte y ayudarte
+            con el servicio que necesitas.
+          </p>
+
+          <br>
+
+          <a href="tel:+12037544375" class="btn btn-primary">Llamar ahora</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cta">
+    <div class="cta-box">
+
+      <h2>¿Cómo podemos ayudarte?</h2>
+
+      <p>
+        Comunícate con Ecuaservices Travel LLC para obtener información
+        sobre nuestros servicios y recibir atención personalizada.
+      </p>
+
+      <a href="tel:+12037544375" class="btn">Contáctanos</a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <strong>ECUASERVICES TRAVEL LLC</strong>
+      <p>Multiservices • Waterbury, Connecticut</p>
+    </div>
+
+    <div>
+      <strong>Contacto</strong>
+      <p>43 Meriden Rd, Waterbury, CT 06705</p>
+      <p>(203) 754-4375</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Ecuaservices Travel LLC. Todos los derechos reservados.
+  </div>
+
+</footer>
+
+</body>
+</html>
