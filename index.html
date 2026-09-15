@@ -141,8 +141,82 @@
       width: 100%;
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 60px;
+      align-items: center;
     }
+.hero-text {
+  min-width: 0;
+}
 
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual-card {
+  width: 100%;
+  max-width: 390px;
+  padding: 38px 32px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid #d9eef1;
+  border-radius: 28px;
+  box-shadow: 0 22px 60px rgba(7,61,120,.12);
+}
+
+.route-flags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 42px;
+  margin-bottom: 28px;
+}
+
+.route-line {
+  flex: 1;
+  height: 2px;
+  margin: 0 18px;
+  background: linear-gradient(90deg, #073d78, #13b8c4);
+  position: relative;
+}
+
+.route-line span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #0aa7b2;
+  padding: 5px 9px;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.hero-visual-card h2 {
+  color: #073d78;
+  font-size: 27px;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero-services {
+  display: grid;
+  gap: 12px;
+}
+
+.hero-services div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #eefafb;
+  color: #073d78;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-weight: bold;
+}
     .eyebrow {
       display: inline-block;
       background: #e3f9fa;
@@ -593,6 +667,19 @@
       section {
         padding: 70px 20px;
       }
+.hero-content {
+  grid-template-columns: 1fr;
+  gap: 35px;
+}
+
+.hero-visual {
+  margin-top: 10px;
+}
+
+.hero-visual-card {
+  max-width: 100%;
+}
+      
     }
   </style>
 </head>
@@ -624,6 +711,7 @@
 
   <section class="hero" id="inicio">
     <div class="hero-content">
+      <div class="hero-text">
 
       <div class="eyebrow">🇪🇨 Ecuador &nbsp; • &nbsp; 🇺🇸 Estados Unidos</div>
 
@@ -642,7 +730,27 @@
         <a href="#servicios" class="btn btn-primary">Ver nuestros servicios</a>
         <a href="#contacto" class="btn btn-secondary">Hablar con nosotros</a>
       </div>
+</div>
 
+<div class="hero-visual">
+  <div class="hero-visual-card">
+    <div class="route-flags">
+      <span>🇺🇸</span>
+      <div class="route-line">
+        <span>✈</span>
+      </div>
+      <span>🇪🇨</span>
+    </div>
+
+    <h2>Conectamos tus necesidades con Ecuador</h2>
+
+    <div class="hero-services">
+      <div>✈️ <span>Viajes</span></div>
+      <div>📦 <span>Envíos</span></div>
+      <div>💵 <span>Transferencias</span></div>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
